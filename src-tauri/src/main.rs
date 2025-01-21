@@ -8,9 +8,8 @@ fn main() {
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_dialog::init())
         .setup(|app: &mut tauri::App| {
-            let mut shared_app = app.handle().clone();
 
-            let result = implement::windows_menu::window_menu(&mut shared_app);
+            let result = implement::windows_menu::window_menu(app);
             if let Err(e) = result {
                 println!(" error: {}", e);
             }

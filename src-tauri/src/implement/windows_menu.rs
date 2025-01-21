@@ -1,10 +1,7 @@
-use tauri::{
-    menu::{MenuBuilder, MenuItem, MenuItemBuilder, SubmenuBuilder},
-    AppHandle,
-};
+use tauri::menu::{MenuBuilder, MenuItem, MenuItemBuilder, SubmenuBuilder};
 
 /// 窗口菜单
-pub fn window_menu(app: &mut AppHandle) -> Result<(), tauri::Error> {
+pub fn window_menu(app: &mut tauri::App) -> Result<(), tauri::Error> {
     let new_file = MenuItem::with_id(app, "new_file", "New File", true, Some("Ctrl+N")).unwrap();
 
     let file_menu = SubmenuBuilder::with_id(app, "file_menu", "File")
