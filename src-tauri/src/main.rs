@@ -12,7 +12,7 @@ fn main() {
 
             let result = implement::windows_menu::window_menu(&mut shared_app);
             if let Err(e) = result {
-                eprintln!("设置窗口菜单失败: {}", e);
+                println!(" error: {}", e);
             }
 
             Ok(())
